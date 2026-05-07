@@ -130,3 +130,4 @@ npm run dev
 | GET | /api/categories | الفئات |
 | POST | /api/categories | فئة جديدة |
 "# mafazaprod" 
+"# mafazaprod" 

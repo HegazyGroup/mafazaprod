@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export default function LoginPage() {
@@ -42,15 +43,13 @@ export default function LoginPage() {
           <p style={{ color: 'var(--text2)', fontSize: '13px', marginTop: '4px' }}>نظام إدارة المنتجات</p>
         </div>
 
-        {/* Form */}
         <div className="card" style={{ borderColor: 'var(--border2)' }}>
           <h2 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '20px' }}>تسجيل الدخول</h2>
           <form onSubmit={handleSubmit}>
             <div style={{ marginBottom: '14px' }}>
               <label className="label">البريد الإلكتروني</label>
               <input
-                className="input-field"
-                type="email" required
+                className="input-field" type="email" required
                 placeholder="example@company.com"
                 value={form.email}
                 onChange={e => setForm({ ...form, email: e.target.value })}
@@ -60,8 +59,7 @@ export default function LoginPage() {
             <div style={{ marginBottom: '20px' }}>
               <label className="label">كلمة المرور</label>
               <input
-                className="input-field"
-                type="password" required
+                className="input-field" type="password" required
                 placeholder="••••••••"
                 value={form.password}
                 onChange={e => setForm({ ...form, password: e.target.value })}
@@ -80,6 +78,11 @@ export default function LoginPage() {
               {loading ? <div className="spinner" style={{ width: '16px', height: '16px' }} /> : 'دخول'}
             </button>
           </form>
+
+          <p style={{ textAlign: 'center', marginTop: '16px', fontSize: '13px', color: 'var(--text2)' }}>
+            مش عندك حساب؟{' '}
+            <Link to="/register" style={{ color: 'var(--accent)', fontWeight: '500' }}>إنشاء حساب جديد</Link>
+          </p>
         </div>
       </div>
     </div>
